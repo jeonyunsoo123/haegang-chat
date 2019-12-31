@@ -5,6 +5,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const request = require('request');
 const app = express();
+
 const school = new School()
 school.init(School.Type.HIGH, School.Region.BUSAN, 'C100001908')
 
@@ -110,7 +111,7 @@ function receivedMessage(event) {
     var echo_message = "ECHO : " + content;
     //if(content.includes('중식') || content.includes('점심')){
     //sendTextMessage(senderId, school.getMeal());
-    console.log(school.getMeal());
+    console.log(school.meal.today);
 
 
    sendTextMessage(senderId, echo_message);
