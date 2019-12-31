@@ -8,7 +8,7 @@ const app = express();
 //작은 따옴표 사이에 본인이 받으신 token을 paste합니다.
 //나중에 보안을 위해서 따로 setting을 하는 방법을 알려드리겠습니다.
 //이 토큰이 포함된 파일을 절대 업로드하거나 github에 적용시키지 마세요.
-var PAGE_ACCESS_TOKEN = 'YOUR TOKEN HERE';
+var PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN;
 
 app.set('port', (process.env.PORT || 5000));
 
@@ -21,7 +21,7 @@ app.get('/', function(req, res) {
 
 
 app.get('/webhook', function(req, res) {
-    if (req.query['hub.verify_token'] === 'VERIFY_TOKEN') {
+    if (req.query['hub.verify_token'] === 'haegangchat') {
         res.send(req.query['hub.challenge']);
     }
     res.send('Error, wrong token');
