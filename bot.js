@@ -63,7 +63,7 @@ function receivedMessage(event) {
     var content = event.message.text;
     var echo_message = "ECHO : " + content;
     //if(content.includes('중식') || content.includes('점심')){
-    sendTextMessage(senderId, echo_message);
+    sendTextMessage(senderId, '중식 알려줄까');
     }
 
   //  sendTextMessage(senderId, echo_message);
