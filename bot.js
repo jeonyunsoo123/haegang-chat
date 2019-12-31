@@ -27,7 +27,7 @@ const sampleAsync = async function() {
 
   // 이번 달 학사일정
   console.log(calendar)
-  var todayschedule = calenar.today;
+  var todayschedule = calendar.today;
 
 
 }
