@@ -126,7 +126,7 @@ function handleMessage(sender_psid, received_message) {
     // Create the payload for a basic text message, which
     // will be added to the body of our request to the Send API
     response = {
-      "text": '오늘의 급식입니다'.concat(" ","안녕", '--', ${smeal.today})      //"text": 'please work baby'
+      "text": '오늘의 급식입니다'.concat(" ","안녕", '--', (${smeal.today}))      //"text": 'please work baby'
     }
   } else if (received_message.attachments) {
     // Get the URL of the message attachment
