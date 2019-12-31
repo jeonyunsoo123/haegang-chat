@@ -111,10 +111,10 @@ function receivedMessage(event) {
     var echo_message = "ECHO : " + content;
     //if(content.includes('중식') || content.includes('점심')){
     //sendTextMessage(senderId, school.getMeal());
-    console.log(school.meal.today);
+    
 
 
-   sendTextMessage(senderId, echo_message);
+   sendTextMessage(senderId, meal.today);
 }
 
 function receivedPostback(event) {
