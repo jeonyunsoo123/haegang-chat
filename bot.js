@@ -22,19 +22,22 @@ const sampleAsync = async function() {
 
   // 오늘 급식 정보
 
-  todaybap = meal.today;
-  console.log(todaybap)
+
+  console.log(meal.today)
   // 이번 달 급식 정보
   console.log(meal)
 
   // 이번 달 학사일정
   console.log(calendar)
-  var todayschedule = calendar.today;
+
 
 
 }
 
 sampleAsync()
+
+todaybap = meal.today;
+todayschedule = calendar.today;
 
 const PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN;
 // Imports dependencies and set up http server
@@ -119,7 +122,7 @@ function handleMessage(sender_psid, received_message) {
     // Create the payload for a basic text message, which
     // will be added to the body of our request to the Send API
     response = {
-      "text": '오늘의 급식입니다'.concat("","안녕")      //"text": 'please work baby'
+      "text": '오늘의 급식입니다'.concat(" ","안녕", '--',todaybap)      //"text": 'please work baby'
     }
   } else if (received_message.attachments) {
     // Get the URL of the message attachment
