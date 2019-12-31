@@ -10,39 +10,12 @@ const
 const school = new School()
 school.init(School.Type.HIGH, School.Region.BUSAN, 'C100001908')
 
-var todaybap = '';
-var todayschedule = '';
+var smeal = {};
+var scalendar = {};
 
 //const sampleAsync = async function() {
   //const meal = await school.getMeal()
 //  const calendar = await school.getCalendar()
-
-const sampleAsync = async function() {
-  const meal = await school.getMeal()
-  const calendar = await school.getCalendar()
-
-  // 오늘 날짜
-  console.log(`${meal.month}월 ${meal.day}일`)
-
-  // 오늘 급식 정보
-  console.log(meal.today)
-
-  // 이번 달 급식 정보
-  console.log(meal)
-
-  // 이번 달 학사일정
-  console.log(calendar)
-
-  todaybap = meal.today;
-  todayschedule = calendar.today;
-
-
-
-
-
-
-
-
 const PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN;
 // Imports dependencies and set up http server
  // creates express http server
@@ -118,6 +91,33 @@ app.get('/webhook', (req, res) => {
   }
 });
 
+
+const sampleAsync = async function() {
+  const meal = await school.getMeal()
+  smeal = meal;
+  const calendar = await school.getCalendar()
+  scalendar = calendar;
+
+  // 오늘 날짜
+  console.log(`${meal.month}월 ${meal.day}일`)
+
+  // 오늘 급식 정보
+  console.log(meal.today)
+
+  // 이번 달 급식 정보
+  console.log(meal)
+
+  // 이번 달 학사일정
+  console.log(calendar)
+
+  todaybap = meal.today;
+  todayschedule = calendar.today;
+}
+
+sampleAsync()
+
+
+
 function handleMessage(sender_psid, received_message) {
   let response;
 
@@ -126,7 +126,7 @@ function handleMessage(sender_psid, received_message) {
     // Create the payload for a basic text message, which
     // will be added to the body of our request to the Send API
     response = {
-      "text": '오늘의 급식입니다'.concat(" ","안녕", '--', ${meal.today})      //"text": 'please work baby'
+      "text": '오늘의 급식입니다'.concat(" ","안녕", '--', ${smeal.today})      //"text": 'please work baby'
     }
   } else if (received_message.attachments) {
     // Get the URL of the message attachment
@@ -201,6 +201,3 @@ function callSendAPI(sender_psid, response) {
     }
   });
 }
-}
-
-sampleAsync()
