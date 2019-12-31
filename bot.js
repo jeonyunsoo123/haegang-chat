@@ -108,10 +108,10 @@ function receivedMessage(event) {
     var content = event.message.text;
     var echo_message = "ECHO : " + content;
     //if(content.includes('중식') || content.includes('점심')){
-    sendTextMessage(senderId, school.getMeal());
+    //sendTextMessage(senderId, school.getMeal());
     }
 
-  //  sendTextMessage(senderId, echo_message);
+   sendTextMessage(senderId, echo_message);
 //}
 
 function receivedPostback(event) {
