@@ -96,7 +96,7 @@ function receivedMessage(event) {
     //var echo_message = "ECHO : " + content;
     //if(content.includes('중식') || content.includes('점심')){
     //sendTextMessage(senderId, school.getMeal());
-   sendTextMessage(senderId, todaybap);
+   sendTextMessage(senderId, content);
 }
 
 function receivedPostback(event) {
@@ -131,4 +131,4 @@ function sendTextMessage(recipientId, message) {
 
 app.listen(app.get('port'), function() {
     console.log('running on port', app.get('port'));
-});
+})
