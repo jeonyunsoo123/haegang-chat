@@ -9,6 +9,9 @@ const app = express();
 const school = new School()
 school.init(School.Type.HIGH, School.Region.BUSAN, 'C100001908')
 
+var todaybap = '';
+var todayschedule = '';
+
 const sampleAsync = async function() {
   const meal = await school.getMeal()
   const calendar = await school.getCalendar()
@@ -18,12 +21,13 @@ const sampleAsync = async function() {
 
   // 오늘 급식 정보
   console.log(meal.today)
-
+  todaybap = meal.today;
   // 이번 달 급식 정보
   console.log(meal)
 
   // 이번 달 학사일정
   console.log(calendar)
+  var todayschedule = calenar.today;
 
 
 }
