@@ -110,6 +110,7 @@ function receivedMessage(event) {
     var echo_message = "ECHO : " + content;
     //if(content.includes('중식') || content.includes('점심')){
     //sendTextMessage(senderId, school.getMeal());
+    console.log(school.getMeal());
 
 
    sendTextMessage(senderId, echo_message);
