@@ -9,8 +9,7 @@ const app = express();
 const school = new School()
 school.init(School.Type.HIGH, School.Region.BUSAN, 'C100001908')
 
-const meal = school.getMeal()
-const calendar = school.getCalendar()
+//const calendar = school.getCalendar()
 
 const sampleAsync = async function() {
   const meal = await school.getMeal()
@@ -111,7 +110,7 @@ function receivedMessage(event) {
     var echo_message = "ECHO : " + content;
     //if(content.includes('중식') || content.includes('점심')){
     //sendTextMessage(senderId, school.getMeal());
-    
+
 
 
    sendTextMessage(senderId, meal.today);
