@@ -13,10 +13,12 @@ school.init(School.Type.HIGH, School.Region.BUSAN, 'C100001908')
 var todaybap = '';
 var todayschedule = '';
 
-const sampleAsync = async function() {
-  const meal = await school.getMeal()
-  const calendar = await school.getCalendar()
+//const sampleAsync = async function() {
+  //const meal = await school.getMeal()
+//  const calendar = await school.getCalendar()
 
+const meal = school.getMeal()
+const calendar = school.getCalendar()
   // 오늘 날짜
   console.log(`${meal.month}월 ${meal.day}일`)
 
@@ -25,7 +27,7 @@ const sampleAsync = async function() {
 
   console.log(meal.today)
   // 이번 달 급식 정보
-  console.log(meal)
+  console.log(meal.parse)
 
   // 이번 달 학사일정
   console.log(calendar)
@@ -33,9 +35,9 @@ const sampleAsync = async function() {
   todaybap = meal.today;
   todayschedule = calendar.today;
 
-}
 
-sampleAsync()
+
+
 
 
 
