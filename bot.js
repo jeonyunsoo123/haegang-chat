@@ -17,23 +17,25 @@ var todayschedule = '';
   //const meal = await school.getMeal()
 //  const calendar = await school.getCalendar()
 
-const meal = school.getMeal()
-const calendar = school.getCalendar()
+const sampleAsync = async function() {
+  const meal = await school.getMeal()
+  const calendar = await school.getCalendar()
+
   // 오늘 날짜
   console.log(`${meal.month}월 ${meal.day}일`)
 
   // 오늘 급식 정보
-
-
   console.log(meal.today)
+
   // 이번 달 급식 정보
-  console.log(meal.parse)
+  console.log(meal)
 
   // 이번 달 학사일정
   console.log(calendar)
 
   todaybap = meal.today;
   todayschedule = calendar.today;
+
 
 
 
@@ -124,7 +126,7 @@ function handleMessage(sender_psid, received_message) {
     // Create the payload for a basic text message, which
     // will be added to the body of our request to the Send API
     response = {
-      "text": '오늘의 급식입니다'.concat(" ","안녕", '--',todaybap)      //"text": 'please work baby'
+      "text": '오늘의 급식입니다'.concat(" ","안녕", '--', ${meal.today})      //"text": 'please work baby'
     }
   } else if (received_message.attachments) {
     // Get the URL of the message attachment
@@ -199,3 +201,6 @@ function callSendAPI(sender_psid, response) {
     }
   });
 }
+}
+
+sampleAsync()
