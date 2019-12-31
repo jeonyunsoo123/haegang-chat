@@ -30,14 +30,14 @@ const sampleAsync = async function() {
   // 이번 달 학사일정
   console.log(calendar)
 
-
+  todaybap = meal.today;
+  todayschedule = calendar.today;
 
 }
 
 sampleAsync()
 
-todaybap = meal.today;
-todayschedule = calendar.today;
+
 
 const PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN;
 // Imports dependencies and set up http server
