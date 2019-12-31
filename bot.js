@@ -62,6 +62,9 @@ function receivedMessage(event) {
     var senderId = event.sender.id;
     var content = event.message.text;
     var echo_message = "ECHO : " + content;
+    if(content.includes('중식')){
+      sendTextMessage(senderId, '점심이 궁금하냐');
+    }
     sendTextMessage(senderId, echo_message);
 }
 
