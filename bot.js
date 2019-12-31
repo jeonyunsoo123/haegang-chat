@@ -99,7 +99,7 @@ function receivedMessage(event) {
 
 
 
-   sendTextMessage(senderId, );
+   sendTextMessage(senderId, todaybap);
 }
 
 function receivedPostback(event) {
