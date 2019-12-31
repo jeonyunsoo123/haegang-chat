@@ -66,8 +66,8 @@ function receivedMessage(event) {
     sendTextMessage(senderId, echo_message);
     }
 
-    sendTextMessage(senderId, echo_message);
-}
+  //  sendTextMessage(senderId, echo_message);
+//}
 
 function receivedPostback(event) {
     console.log("RECEIVED POSTBACK IT WORKS");
