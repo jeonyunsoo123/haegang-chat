@@ -92,13 +92,10 @@ app.post("/webhook", function(req, res) {
 function receivedMessage(event) {
   console.log("------------------MESSAGE RECIEVED--------------------");
     var senderId = event.sender.id;
-    var content = event.message.text;
-    var echo_message = "ECHO : " + content;
+    //var content = event.message.text;
+    //var echo_message = "ECHO : " + content;
     //if(content.includes('중식') || content.includes('점심')){
     //sendTextMessage(senderId, school.getMeal());
-
-
-
    sendTextMessage(senderId, todaybap);
 }
 
