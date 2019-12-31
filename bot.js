@@ -92,7 +92,7 @@ app.post("/webhook", function(req, res) {
 function receivedMessage(event) {
   console.log("------------------MESSAGE RECIEVED--------------------");
     var senderId = event.sender.id;
-    //var content = event.message.text;
+    var content = event.message.text;
     //var echo_message = "ECHO : " + content;
     //if(content.includes('중식') || content.includes('점심')){
     //sendTextMessage(senderId, school.getMeal());
@@ -129,6 +129,6 @@ function sendTextMessage(recipientId, message) {
     });
 }
 
-app.listen(app.get('port'), function()) {
+app.listen(app.get('port'), function() {
     console.log('running on port', app.get('port'));
-}
+});
