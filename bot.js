@@ -21,8 +21,9 @@ const sampleAsync = async function() {
   console.log(`${meal.month}월 ${meal.day}일`)
 
   // 오늘 급식 정보
-  console.log(meal.today)
+
   todaybap = meal.today;
+  console.log(todaybap)
   // 이번 달 급식 정보
   console.log(meal)
 
@@ -118,7 +119,7 @@ function handleMessage(sender_psid, received_message) {
     // Create the payload for a basic text message, which
     // will be added to the body of our request to the Send API
     response = {
-      "text": '오늘의 급식입니다'.concat("",todaybap)      //"text": 'please work baby'
+      "text": '오늘의 급식입니다'.concat("","안녕")      //"text": 'please work baby'
     }
   } else if (received_message.attachments) {
     // Get the URL of the message attachment
