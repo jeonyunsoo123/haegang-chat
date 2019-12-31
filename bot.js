@@ -110,10 +110,10 @@ function receivedMessage(event) {
     var echo_message = "ECHO : " + content;
     //if(content.includes('중식') || content.includes('점심')){
     //sendTextMessage(senderId, school.getMeal());
-    }
+
 
    sendTextMessage(senderId, echo_message);
-//}
+}
 
 function receivedPostback(event) {
     console.log("RECEIVED POSTBACK IT WORKS");
