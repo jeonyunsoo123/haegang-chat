@@ -9,35 +9,11 @@ const app = express();
 const school = new School()
 school.init(School.Type.HIGH, School.Region.BUSAN, 'C100001908')
 
+const meal = school.getMeal();
+const calendar = school.getCalendar();
+
 //const calendar = school.getCalendar()
 
-
-  //const meal = await school.getMeal()
-//  const calendar = await school.getCalendar()
-
-  // 오늘 날짜
-//  console.log(`${meal.month}월 ${meal.day}일`)
-
-  // 오늘 급식 정보
-//  console.log(meal.today)
-
-  // 이번 달 급식 정보
-//  console.log(meal)
-
-  // 이번 달 학사일정
-  //console.log(calendar)
-
-  // 년도와 달을 지정하여 해당 날짜의 데이터를 조회할 수 있습니다.
-//  const mealCustom = await school.getMeal(2018, 9)
-//  const calendarCustom = await school.getCalendar(2017, 4)
-
-//  console.log(mealCustom)
-//  console.log(calendarCustom)
-
-
-}
-
-sampleAsync()
 //작은 따옴표 사이에 본인이 받으신 token을 paste합니다.
 //나중에 보안을 위해서 따로 setting을 하는 방법을 알려드리겠습니다.
 //이 토큰이 포함된 파일을 절대 업로드하거나 github에 적용시키지 마세요.
@@ -96,13 +72,12 @@ function receivedMessage(event) {
     var senderId = event.sender.id;
     var content = event.message.text;
     var echo_message = "ECHO : " + content;
-    const meal = await school.getMeal()
     //if(content.includes('중식') || content.includes('점심')){
     //sendTextMessage(senderId, school.getMeal());
 
 
 
-   sendTextMessage(senderId, meal);
+   sendTextMessage(senderId, );
 }
 
 function receivedPostback(event) {
@@ -134,7 +109,6 @@ function sendTextMessage(recipientId, message) {
         }
     });
 }
-
 
 app.listen(app.get('port'), function() {
     console.log('running on port', app.get('port'));
