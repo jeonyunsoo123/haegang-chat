@@ -7,10 +7,7 @@ const request = require('request');
 const app = express();
 const school = new School()
 school.init(School.Type.HIGH, School.Region.BUSAN, 'C100001908')
-const School = require('node-school-kr')
-const school = new School()
 
-school.init(School.Type.HIGH, School.Region.GYEONGGI, 'J100000488')
 
 const sampleAsync = async function() {
   const meal = await school.getMeal()
