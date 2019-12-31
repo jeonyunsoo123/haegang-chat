@@ -104,6 +104,7 @@ app.post("/webhook", function(req, res) {
 });
 
 function receivedMessage(event) {
+  console.log("------------------MESSAGE RECIEVED--------------------");
     var senderId = event.sender.id;
     var content = event.message.text;
     var echo_message = "ECHO : " + content;
