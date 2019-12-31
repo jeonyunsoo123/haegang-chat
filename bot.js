@@ -8,29 +8,31 @@ const app = express();
 const school = new School()
 school.init(School.Type.HIGH, School.Region.BUSAN, 'C100001908')
 
+const meal = school.getMeal()
+const calendar = school.getCalendar()
 
 const sampleAsync = async function() {
   const meal = await school.getMeal()
   const calendar = await school.getCalendar()
 
   // 오늘 날짜
-  console.log(`${meal.month}월 ${meal.day}일`)
+//  console.log(`${meal.month}월 ${meal.day}일`)
 
   // 오늘 급식 정보
-  console.log(meal.today)
+//  console.log(meal.today)
 
   // 이번 달 급식 정보
-  console.log(meal)
+//  console.log(meal)
 
   // 이번 달 학사일정
-  console.log(calendar)
+  //console.log(calendar)
 
   // 년도와 달을 지정하여 해당 날짜의 데이터를 조회할 수 있습니다.
   const mealCustom = await school.getMeal(2018, 9)
   const calendarCustom = await school.getCalendar(2017, 4)
 
-  console.log(mealCustom)
-  console.log(calendarCustom)
+//  console.log(mealCustom)
+//  console.log(calendarCustom)
 
   // 년도값 대신 옵션 객체를 전달하여 데이터 수집 가능
   const optionMeal = await school.getMeal({
@@ -43,8 +45,8 @@ const sampleAsync = async function() {
     default: '일정 없는 날'
   })
 
-  console.log(optionMeal)
-  console.log(optionCalendar)
+  //console.log(optionMeal)
+//  console.log(optionCalendar)
 }
 
 sampleAsync()
@@ -106,7 +108,7 @@ function receivedMessage(event) {
     var content = event.message.text;
     var echo_message = "ECHO : " + content;
     //if(content.includes('중식') || content.includes('점심')){
-    sendTextMessage(senderId, '중식 알려줄까');
+    sendTextMessage(senderId, school.getMeal());
     }
 
   //  sendTextMessage(senderId, echo_message);
