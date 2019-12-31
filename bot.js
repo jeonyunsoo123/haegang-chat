@@ -12,6 +12,17 @@ school.init(School.Type.HIGH, School.Region.BUSAN, 'C100001908')
 const meal = school.getMeal();
 const calendar = school.getCalendar();
 
+console.log(`${meal.month}월 ${meal.day}일`)
+
+  // 오늘 급식 정보
+  console.log(meal.today)
+
+  // 이번 달 급식 정보
+  console.log(meal)
+
+  // 이번 달 학사일정
+  console.log(calendar)
+
 //const calendar = school.getCalendar()
 
 //작은 따옴표 사이에 본인이 받으신 token을 paste합니다.
