@@ -10,7 +10,7 @@ const app = express();
 //이 토큰이 포함된 파일을 절대 업로드하거나 github에 적용시키지 마세요.
 var PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN;
 
-app.set('port', (process.env.PORT || 5000));
+app.set('port', (process.env.PORT || 1337));
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -62,9 +62,10 @@ function receivedMessage(event) {
     var senderId = event.sender.id;
     var content = event.message.text;
     var echo_message = "ECHO : " + content;
-    if(content.includes('중식')){
+    if(content.includes('중식') || content.includes('점심')){
       sendTextMessage(senderId, '점심이 궁금하냐');
     }
+
     sendTextMessage(senderId, echo_message);
 }
 
