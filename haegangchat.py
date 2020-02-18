@@ -6,7 +6,7 @@ from flask import Flask, request
 from pymessenger.bot import Bot
 
 app = Flask(__name__)
-ACCESS_TOKEN = os.getenv('FBKEY')
+ACCESS_TOKEN = 'EAARPvFZB8vQgBAAKsHqgxQJtGOfZC0PPdTZA3We7TPAnsQuYVDKi3SZAZC14mjOSj4ZAayuG1jcvZBjvU0y4bTpC7BgyntF1YyuUDZBLUy40XqorAbefLu4q2tC6ORLxgpie3kmxmPXqwJfy4kHQKIgIdC5VfCZCACsX3ZCXJ2rJ763gZDZD'
 VERIFY_TOKEN = 'JEONYSTOKEN'
 bot = Bot(ACCESS_TOKEN)
 
