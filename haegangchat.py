@@ -4,7 +4,7 @@ from pymessenger.bot import Bot
 
 app = Flask(__name__)       # Initializing our Flask application
 ACCESS_TOKEN = 'EAARPvFZB8vQgBALLAZBukOiIcig039LcVitddt1coru1ehE9am6oK54rTRCELOEkFFzahXtXZBPYdPdZBs8JgK7yzulOrzIvITpAvlDSgV2TwrD0vvlNOdUIncpP1V8rQxBfy8ufv0A6ub2LeZB2mXvEAnu4WZAwaBZBcuZCTMaLIAZDZD'
-VERIFY_TOKEN = 'EAARPvFZB8vQgBALLAZBukOiIcig039LcVitddt1coru1ehE9am6oK54rTRCELOEkFFzahXtXZBPYdPdZBs8JgK7yzulOrzIvITpAvlDSgV2TwrD0vvlNOdUIncpP1V8rQxBfy8ufv0A6ub2LeZB2mXvEAnu4WZAwaBZBcuZCTMaLIAZDZD'
+VERIFY_TOKEN = 'JEONYSTOKEN'
 bot = Bot('EAARPvFZB8vQgBALLAZBukOiIcig039LcVitddt1coru1ehE9am6oK54rTRCELOEkFFzahXtXZBPYdPdZBs8JgK7yzulOrzIvITpAvlDSgV2TwrD0vvlNOdUIncpP1V8rQxBfy8ufv0A6ub2LeZB2mXvEAnu4WZAwaBZBcuZCTMaLIAZDZD')
 
 # Importing standard route and two requst types: GET and POST.
@@ -61,4 +61,4 @@ def send_message(recipient_id, response):
 
 # Add description here about this if statement.
 if __name__ == "__main__":
-    haegangchat.run()
+    app.run()
