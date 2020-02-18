@@ -61,4 +61,4 @@ def send_message(recipient_id, response):
 
 # Add description here about this if statement.
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=1337)
+    app.run()
