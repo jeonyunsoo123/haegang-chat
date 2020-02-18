@@ -4,8 +4,8 @@ from pymessenger.bot import Bot
 
 app = Flask(__name__)       # Initializing our Flask application
 ACCESS_TOKEN = 'EAARPvFZB8vQgBALLAZBukOiIcig039LcVitddt1coru1ehE9am6oK54rTRCELOEkFFzahXtXZBPYdPdZBs8JgK7yzulOrzIvITpAvlDSgV2TwrD0vvlNOdUIncpP1V8rQxBfy8ufv0A6ub2LeZB2mXvEAnu4WZAwaBZBcuZCTMaLIAZDZD'
-VERIFY_TOKEN = 'JEONYSTOKEN'
-bot = Bot(ACCESS_TOKEN)
+VERIFY_TOKEN = 'EAARPvFZB8vQgBALLAZBukOiIcig039LcVitddt1coru1ehE9am6oK54rTRCELOEkFFzahXtXZBPYdPdZBs8JgK7yzulOrzIvITpAvlDSgV2TwrD0vvlNOdUIncpP1V8rQxBfy8ufv0A6ub2LeZB2mXvEAnu4WZAwaBZBcuZCTMaLIAZDZD'
+bot = Bot('EAARPvFZB8vQgBALLAZBukOiIcig039LcVitddt1coru1ehE9am6oK54rTRCELOEkFFzahXtXZBPYdPdZBs8JgK7yzulOrzIvITpAvlDSgV2TwrD0vvlNOdUIncpP1V8rQxBfy8ufv0A6ub2LeZB2mXvEAnu4WZAwaBZBcuZCTMaLIAZDZD')
 
 # Importing standard route and two requst types: GET and POST.
 # We will receive messages that Facebook sends our bot at this endpoint
