@@ -16,7 +16,7 @@ day=time.strftime("%d",time.localtime())
 total_msg = []
 #print("FLAG1")
 
-f = open("send_text.txt", 'w')
+f = open("send_text.txt", 'w', encoding="utf8")
 
 total_msg.append("좋은 아침입니다! 학교 갈 준비 되셨나요?")
 total_msg.append("")
@@ -83,7 +83,7 @@ def receive_message():
                         send_message(recipient_id, response_sent_text)
                     # if user send us a GIF, photo, video or any other non-text item
                     if message['message'].get('attachments'):
-                        response_sent_text = get_message()
+                        response_sent_text =
                         send_message(recipient_id, response_sent_text)
     return "Message Processed"
 
@@ -97,11 +97,12 @@ def verify_fb_token(token_sent):
 
 
 def get_message():
+
     sample_responses = ["You are stunning!", "We're proud of you",
                         "Keep on being you!", "We're greatful to know you :)"]
     # return selected item to the user
     #return random.choice(sample_responses)
-    return total_msg
+    return "\n".join(total_msg)
 
 
 # Uses PyMessenger to send response to the user
