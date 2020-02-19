@@ -8,7 +8,7 @@ day=time.strftime("%d",time.localtime())
 total_msg = []
 #print("FLAG1")
 
-f = open("send_text.txt", 'w', encoding='utf8')
+f = open("send_text.txt", 'w')
 
 
 
@@ -31,6 +31,7 @@ total_msg.append("")
 total_msg.append("오늘의 급식 정보는 다음과 같습니다")
 total_msg.append("")
 total_msg.append("[중식]")
+
 with open('menu.json', encoding="utf8") as menu_json:
     menu_json_data = json.load(menu_json)
 
