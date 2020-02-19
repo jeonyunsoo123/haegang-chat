@@ -51,3 +51,6 @@ for i in total_msg:
     f.write(i)
     f.write("\n")
 f.close()
+
+print("\n".join(total_msg))
+print(type("\n".join(total_msg)))
