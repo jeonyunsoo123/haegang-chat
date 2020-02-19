@@ -4,11 +4,11 @@ officeCode="stu.pen.go.kr" ## 교육청 코드
 schulCode="C100001908" ## 학교 고유코드
 schulCrseCode="4" ## 학교 분류코드 (고등학교, 중학교, 초등학교)
 schulKndScCode="04" ## 학교 분류코드
-schYm=time.strftime("%Y%m",time.localtime())
+schYm="201904"#time.strftime("%Y%m",time.localtime())
 
 ##neis web requests
 URL="https://" + officeCode + "/sts_sci_md00_001.do"
-##params = {'schulCode': 'B100000593', 'schulCrseScCode': '4', 'schulKndScCode' : '04', 'ay' : str(year)} 
+##params = {'schulCode': 'B100000593', 'schulCrseScCode': '4', 'schulKndScCode' : '04', 'ay' : str(year)}
 params = {'schulCode': str(schulCode), 'schulCrseScCode': str(schulCrseCode), 'schulKndScCode' : str(schulKndScCode), 'schYm' : str(schYm)}
 response = requests.get(URL, params=params).text
 data = response[response.find("<tbody>"):response.find("</tbody>")]
@@ -34,7 +34,7 @@ for dat in data:
     if not menu:
         menu="None"
     file_json.update({date : menu})
-    
+
 ##Json 생성
 with open('menu.json', 'w', encoding='utf-8') as outfile:
        json.dump(file_json, outfile, sort_keys = False, indent=4, ensure_ascii=0)

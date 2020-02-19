@@ -1,6 +1,6 @@
 import json, time
 haksa_today_day = time.strftime("%d",time.localtime())
-menu_today_day = "1"
+menu_today_day = time.strftime("%d",time.localtime())
 
 with open('haksa.json') as haksa_json:
     haksa_json_data = json.load(haksa_json)

@@ -4,12 +4,12 @@ officeCode="stu.pen.go.kr" ## 교육청 코드
 schulCode="C100001908" ## 학교 고유코드
 schulCrseCode="4" ## 학교 분류코드 (고등학교, 중학교, 초등학교)
 schulKndScCode="04" ## 학교 분류코드
-ay=time.strftime("%Y",time.localtime())
-mm=time.strftime("%m",time.localtime())
+ay="2019"#time.strftime("%Y",time.localtime())
+mm="04"#time.strftime("%m",time.localtime())
 
 ##neis web requests
 URL="https://" + officeCode + "/sts_sci_sf01_001.do"
-##params = {'schulCode': 'B100000593', 'schulCrseScCode': '4', 'schulKndScCode' : '04', 'ay' : str(year)} 
+##params = {'schulCode': 'B100000593', 'schulCrseScCode': '4', 'schulKndScCode' : '04', 'ay' : str(year)}
 params = {'schulCode': str(schulCode), 'schulCrseScCode': str(schulCrseCode), 'schulKndScCode' : str(schulKndScCode), 'ay' : str(ay), 'mm' : str(mm)}
 response = requests.get(URL, params=params).text
 data = response[response.find("<tbody>"):response.find("</tbody>")]
@@ -33,4 +33,3 @@ for dat in data:
 ##Json 생성
 with open('haksa.json', 'w', encoding='utf-8') as outfile:
        json.dump(file_json, outfile, sort_keys = False, indent=4, ensure_ascii=0)
-
